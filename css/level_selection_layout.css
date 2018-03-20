@@ -1,0 +1,87 @@
+@import url("fonts.css");
+
+html, body {
+
+	margin: 0;
+	border: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+hr { 
+	border: 0; 
+	height: 1px; 
+	width: 90%;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	background-image: -webkit-linear-gradient(left, #27271F, #8c8b8b, #27271F);
+	background-image: -moz-linear-gradient(left, #27271F, #8c8b8b, #27271F);
+	background-image: -ms-linear-gradient(left, #27271F, #8c8b8b, #27271F);
+	background-image: -o-linear-gradient(left, #27271F, #8c8b8b, #27271F); 
+}
+
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
+#gg {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: #080808;
+}
+
+#ggTop {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Bebas';
+	color: #eee;
+	font-size: 120px;
+	padding-top: 50px;
+}
+
+#ggBottom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.levelContainer {
+	display: flex;
+	justify-content: center;
+	height: 56%;
+}
+
+.levelTextContainer {
+	margin-top: -30px;
+	display: flex;
+	justify-content: center;
+	height: 19%;
+	font-family: 'Roboto';
+	color: #888;
+}
+
+.levelItem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 230px;
+	width: 230px;
+	margin: 18px;
+	background-color: #111;
+}
+
+.textItem {
+	display: flex;
+	justify-content: center;
+	width: 230px;
+	margin: 18px;
+}
