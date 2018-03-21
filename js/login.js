@@ -14,14 +14,15 @@ function validatePassword()
 
 $(document).ready(function()
 {
-	db.find({}, function(err, docs)
-	{
-		if(docs.length != 0)
-		{
-			$('#appPassCode').val('kaiser1601');
-			$('#enterApp').trigger('click');
-		}
-	});
+	$('#iecseLogo').fadeIn(100);
+	// db.find({}, function(err, docs)
+	// {
+	// 	if(docs.length != 0)
+	// 	{
+	// 		$('#appPassCode').val('kaiser1601');
+	// 		$('#enterApp').trigger('click');
+	// 	}
+	// });
 });
 
 document.addEventListener('contextmenu', event => event.preventDefault());

@@ -79,6 +79,14 @@ code {
 
 }
 
+.backdrop {
+	height: 100%;
+	width: 100%;
+	background-image: url(img/got1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .lockScreen {
 	z-index: 10;
 	width: 100%;
@@ -86,11 +94,6 @@ code {
 	background-color: #0F0D08;
 	opacity: 0.96;
 	display: flex;
-}
-
-#iecseLogo {
-	height: 300px;
-	width: 400px;
 }
 
 .w3-center {
@@ -161,16 +164,26 @@ code {
 
 }
 
+.homeIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 4%;
+	background-color: #0F0D08;
+	color: #eee;
+}
+
 .sideBarHeader {
 
 	height: 100%;
-	width: 18%;
+	width: 14%;
 	background-color: #0F0D08;
 	color: #eee;
 	display: flex;
 	align-items: center;
 	font-size: 30px;
-	padding-left: 55px; 
+	padding-left: 6px; 
 
 }
 
@@ -411,8 +424,8 @@ code {
 	text-decoration: none;
 	font-size: 20px;
 	transition-duration: 0.4s;
-	align-items: center;
 	cursor: pointer;
+	justify-content: center;
 
 }
 
@@ -425,9 +438,10 @@ code {
 .questionNumber {
 
 	height: 100%;
-	width: 65%;
-	padding-top: 12px;
-	margin-left: 25px;
+	width: 55%;
+	display:flex;
+  	align-items: center;
+  	justify-content:center;
 
 }
 

@@ -10,7 +10,8 @@ var participant =
 	'endTimeStamp' : 0,
 	'score': 0,
 	'unlocked': [true, false, false, false, false],
-	'submissionHistory': [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
+	'submissionHistory': [[],[],[],[],[],[],[],[],[],[],[],[],[],
+						  [],[],[],[],[],[],[],[],[],[],[],[],[]]
 };
 
 var ngui = require('nw.gui');

@@ -38,276 +38,251 @@ var questions =
 
 		1 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 300,
-			'answer' : "b17ef6d19c7a5b1ee83b907c595526dcb1eb06db8227d650d5dda0a9f4ce8cd9",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "b17ef6d19c7a5b1ee83b907c595526dcb1eb06db8227d650d5dda0a9f4ce8cd9"
 
 		},
 
 		2 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 300,
-			'answer' : "ffc3ab9bbd061c65a62c581365b3d3771400c60dfe110cf0e39e70cab3e2a86b",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "ffc3ab9bbd061c65a62c581365b3d3771400c60dfe110cf0e39e70cab3e2a86b"
 
 		},
 
 		3 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 500,
-			'answer' : "d1c78c9aa5dcb0991f46b25fbaaa359d7d5823ac7a2a94c4d4a31da42a26c24f",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "d1c78c9aa5dcb0991f46b25fbaaa359d7d5823ac7a2a94c4d4a31da42a26c24f"
 
 		},
 
 		4 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 500,
-			'answer' : "defaf960345a9fb69252cc35f240119ee50c1ee04ef34723f1120e86b7a94dce",
-			'scored' : 0
+			'score' : 60,
+			'answer' : "defaf960345a9fb69252cc35f240119ee50c1ee04ef34723f1120e86b7a94dce"
 
 		},
 
 		5 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 500,
-			'answer' : "caf7157687a2118497cf1e2d59fe1f2ad1fb2080befbf2e857a501a6a2c668a8",
-			'scored' : 0
+			'score' : 120,
+			'answer' : "caf7157687a2118497cf1e2d59fe1f2ad1fb2080befbf2e857a501a6a2c668a8"
 
 		},
 
 		6 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 700,
-			'answer' : "873a641fc888512d1e9956f2ab63c6480bf59650962f9e19523d4fb5eb9fefe4",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "873a641fc888512d1e9956f2ab63c6480bf59650962f9e19523d4fb5eb9fefe4"
 
 		},
 
 		7 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 700,
-			'answer' : "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
 
 		},
 
 		8 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 700,
-			'answer' : "97bc30958636d678585af665c179ad13a59db0b56441f9401a9504d8cf2f10de",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "97bc30958636d678585af665c179ad13a59db0b56441f9401a9504d8cf2f10de"
 
 		},
 
 		9 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1000,
-			'answer' : "8afd348bfbd009777bdf7f213333f58879971be95e77705caf6f681fa25a3c0f",
-			'scored' : 0
+			'score' : 60,
+			'answer' : "8afd348bfbd009777bdf7f213333f58879971be95e77705caf6f681fa25a3c0f"
 
 		},
 
 		10 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1000,
-			'answer' : "a68b412c4282555f15546cf6e1fc42893b7e07f271557ceb021821098dd66c1b",
-			'scored' : 0
+			'score' : 120,
+			'answer' : "a68b412c4282555f15546cf6e1fc42893b7e07f271557ceb021821098dd66c1b"
 
 		},
 
 		11 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1500,
-			'answer' : "22ed1db84e21400ffc69d7215a42f73314ea27dcdecd1a9991cae4d5a0d942c5",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "22ed1db84e21400ffc69d7215a42f73314ea27dcdecd1a9991cae4d5a0d942c5"
 
 		},
 
 		12 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1500,
-			'answer' : "91969e505d012cfef2edf56b4920ac7f55dcc41282d4b3c4bd96a5e2ec110c1b",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "91969e505d012cfef2edf56b4920ac7f55dcc41282d4b3c4bd96a5e2ec110c1b"
 
 		},
 
 		13 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1500,
-			'answer' : "9c5b5a7978a6a5b49a1a425d2388abb2a98aafb3c983698530631c4bd5b1c777",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "9c5b5a7978a6a5b49a1a425d2388abb2a98aafb3c983698530631c4bd5b1c777"
 
 		},
 
 		14 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1800,
-			'answer' : "7791da0ff6e2fc8c6ac35f6894b91f3be4575641ab9edc90b4588fb4b6d653df",
-			'scored' : 0
+			'score' : 60,
+			'answer' : "7791da0ff6e2fc8c6ac35f6894b91f3be4575641ab9edc90b4588fb4b6d653df"
 
 		},
 		
 		15 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 2000,
-			'answer' : "3dc1c99df6e4c897966f74568e32a6361f8d8da08578ebd51088fc469719c2f3",
-			'scored' : 0
+			'score' : 120,
+			'answer' : "3dc1c99df6e4c897966f74568e32a6361f8d8da08578ebd51088fc469719c2f3"
 
 		},
 
 		16 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 700,
-			'answer' : "873a641fc888512d1e9956f2ab63c6480bf59650962f9e19523d4fb5eb9fefe4",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "873a641fc888512d1e9956f2ab63c6480bf59650962f9e19523d4fb5eb9fefe4"
 
 		},
 
 		17 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 700,
-			'answer' : "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
 
 		},
 
 		18 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 700,
-			'answer' : "97bc30958636d678585af665c179ad13a59db0b56441f9401a9504d8cf2f10de",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "97bc30958636d678585af665c179ad13a59db0b56441f9401a9504d8cf2f10de"
 
 		},
 
 		19 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1000,
-			'answer' : "8afd348bfbd009777bdf7f213333f58879971be95e77705caf6f681fa25a3c0f",
-			'scored' : 0
+			'score' : 60,
+			'answer' : "8afd348bfbd009777bdf7f213333f58879971be95e77705caf6f681fa25a3c0f"
 
 		},
 
 		20 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1000,
-			'answer' : "a68b412c4282555f15546cf6e1fc42893b7e07f271557ceb021821098dd66c1b",
-			'scored' : 0
+			'score' : 120,
+			'answer' : "a68b412c4282555f15546cf6e1fc42893b7e07f271557ceb021821098dd66c1b"
 
 		},
 
 		21 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1500,
-			'answer' : "22ed1db84e21400ffc69d7215a42f73314ea27dcdecd1a9991cae4d5a0d942c5",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "22ed1db84e21400ffc69d7215a42f73314ea27dcdecd1a9991cae4d5a0d942c5"
 
 		},
 
 		22 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1500,
-			'answer' : "91969e505d012cfef2edf56b4920ac7f55dcc41282d4b3c4bd96a5e2ec110c1b",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "91969e505d012cfef2edf56b4920ac7f55dcc41282d4b3c4bd96a5e2ec110c1b"
 
 		},
 
 		23 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1500,
-			'answer' : "9c5b5a7978a6a5b49a1a425d2388abb2a98aafb3c983698530631c4bd5b1c777",
-			'scored' : 0
+			'score' : 30,
+			'answer' : "9c5b5a7978a6a5b49a1a425d2388abb2a98aafb3c983698530631c4bd5b1c777"
 
 		},
 
 		24 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 1800,
-			'answer' : "7791da0ff6e2fc8c6ac35f6894b91f3be4575641ab9edc90b4588fb4b6d653df",
-			'scored' : 0
+			'score' : 60,
+			'answer' : "7791da0ff6e2fc8c6ac35f6894b91f3be4575641ab9edc90b4588fb4b6d653df"
 
 		},
 		
 		25 : {
 
-			'penalties': 0,
+			'penalties' : 0,
 			'solved' : false,
 			'attempted' : false,
-			'score' : 2000,
-			'answer' : "3dc1c99df6e4c897966f74568e32a6361f8d8da08578ebd51088fc469719c2f3",
-			'scored' : 0
+			'score' : 120,
+			'answer' : "3dc1c99df6e4c897966f74568e32a6361f8d8da08578ebd51088fc469719c2f3"
 
 		}
 
