@@ -1,7 +1,7 @@
 var currentQuestion = 0;
 var currentLevel = 0;
-var duration = 91;
-var numberOfQuestions = 25;
+var duration = 60;
+var numberOfQuestions = 20;
 
 var participant = 
 
@@ -11,7 +11,8 @@ var participant =
 	'score': 0,
 	'unlocked': [true, false, false, false, false],
 	'submissionHistory': [[],[],[],[],[],[],[],[],[],[],[],[],[],
-						  [],[],[],[],[],[],[],[],[],[],[],[],[]]
+						  [],[],[],[],[],[],[],[],[],[],[],[],[]],
+	'penalty': 0
 };
 
 var ngui = require('nw.gui');

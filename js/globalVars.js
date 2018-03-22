@@ -25,7 +25,7 @@ function setVariables()
 	currentLevel = parseInt(sessionStorage.currentLevel);
 
 	var questionLinksHTML = "<hr style='width: 100%;'>";
-	for(let i = currentLevel * 5 + 1; i <= (currentLevel + 1) * 5; i++)
+	for(let i = currentLevel * 4 + 1; i <= (currentLevel + 1) * 4; i++)
 	{
 		questionLinksHTML += "<div id='qn" + i + "' class='questionLink' onclick='displayQuestion("+i+")'>";
 		questionLinksHTML += "<div id='qn" + i + "T' class='questionNumber'>Question " + i + "</div>";
@@ -33,7 +33,7 @@ function setVariables()
 	}
 	$('#sideBarID').html(questionLinksHTML);
 
-	for(let i = currentLevel * 5 + 1; i <= (currentLevel + 1) * 5; i++)
+	for(let i = currentLevel * 4 + 1; i <= (currentLevel + 1) * 4; i++)
 	{
 		if(questions[i]['solved'])
 			$("#qn" + i + "T").css({'color' : '#37B76C'});
@@ -52,6 +52,7 @@ function setVariables()
 		$(this).text("00:00:00");
 		$("#submitButton").css("pointer-events","none");
 		alert('Your time\'s up!');
+		openNav();
 	});
 	nwin.show();
 	nwin.maximize();
@@ -59,7 +60,8 @@ function setVariables()
 
 function getTable()
 {
-	var tableContent = "<div class='tableOfScores'><div class='tableOfScoresRow'><div>Problem</div><div>Penalties</div><div>Score</div></div><hr>";
+	var tableContent = "<div class='timeRemainingText' id='pens'> penalty time: " + participant['penalty'] + "</div><hr>";
+	tableContent += "<div class='tableOfScores'><div class='tableOfScoresRow'><div>Problem</div><div>Penalties</div><div>Score</div></div><hr>";
 	for(let i=1;i<=numberOfQuestions;i++)
 	{
 		var div1 = "<div>" + i + "</div>";
@@ -98,8 +100,8 @@ function submit()
 		{
 			db.insert(
 			{
-				participant: participant,
-				questions: questions
+				participant: sjcl.encrypt(author, JSON.stringify(participant)),
+				questions: sjcl.encrypt(author, JSON.stringify(questions))
 			}, function(err, newDocs){
 				console.log(err);
 				console.log(newDocs);
@@ -113,13 +115,14 @@ function unlockNextLevel()
 	if(currentLevel < 4 && !participant['unlocked'][currentLevel + 1])
 	{
 		var levelScore = 0;
-		for(let i = currentLevel * 5 + 1; i <= (currentLevel + 1) * 5; i++)
+		for(let i = currentLevel * 4 + 1; i <= (currentLevel + 1) * 4; i++)
 			if(questions[i]['solved'])
 				levelScore += questions[i]['score'];
 	}
 	if(levelScore >= 90)
 	{
-		alert("You have unlocked level" + (currentLevel + 2));
+		let pass = ['royalstag', 'shenron', 'pantherea', 'sausages'];
+		alert("You have unlocked level " + (currentLevel + 2) + "!\n Password for the PDF is: ");
 		participant['unlocked'][currentLevel + 1] = true;
 	}
 }
@@ -155,6 +158,7 @@ function submitX(callback)
 		questions[currentQuestion]['solved'] = true;
 		participant['score'] += questions[currentQuestion]['score'];
 		$('#sDinner2').text(participant['score']);
+		participant['penalty'] += (questions[currentQuestion]['penalties'] + 1) * parseInt(Math.floor((new Date().getTime() - participant['startTimeStamp']) / 60000));
 		unlockNextLevel();
 		callback();
 	}
@@ -173,8 +177,8 @@ function restoreFromDB()
 {
 	db.find({}, function(err, docs)
 	{
-		participant = docs[0].participant;
-		questions = docs[0].questions;
+		participant = JSON.parse(sjcl.decrypt(author, docs[0].participant));
+		questions   = JSON.parse(sjcl.decrypt(author, docs[0].questions));
 		setVariables();
 	});
 }
@@ -185,5 +189,5 @@ $(document).ready(function()
 	catch(err){ console.log(err); }
 });
 
-// document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 

@@ -9,20 +9,26 @@ function validatePassword()
 {
 	var pass = $("#appPassCode").val();
 	$("#appPassCode").val('');
-	return Sha256.hash(pass) === "2cd9806015c95a30962f40a0c5747e913658576947eae167c2517a67a1ee345e";
+	return pass === "valarmorghulis";
 }
 
 $(document).ready(function()
 {
-	$('#iecseLogo').fadeIn(100);
-	// db.find({}, function(err, docs)
-	// {
-	// 	if(docs.length != 0)
-	// 	{
-	// 		$('#appPassCode').val('kaiser1601');
-	// 		$('#enterApp').trigger('click');
-	// 	}
-	// });
+	nwin.show();
+	nwin.maximize();
+	$('#iecseLogo').delay(600).fadeIn();
+	$('#iecseLogo').delay(800).fadeOut();
+	setTimeout(function() {
+		$('#loginScreen').delay(600).fadeIn();
+	}, 1800);
+	db.find({}, function(err, docs)
+	{
+		if(docs.length != 0)
+		{
+			$('#appPassCode').val('valarmorghulis');
+			$('#enterApp').trigger('click');
+		}
+	});
 });
 
 document.addEventListener('contextmenu', event => event.preventDefault());

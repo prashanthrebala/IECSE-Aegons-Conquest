@@ -1,24 +1,28 @@
 function setVariables() 
 {
-	let name = ['ALPHA', 'BETA', 'GAMMA', 'DELTA', 'EPSILON'];
-	var content = "<div class='levelContainer'>";
+	let name = ['Stark', 'Baratheon', 'Targaryen', 'Lannister', 'Greyjoy'];
+
+	var content = "<div id='cover'>";
 	for(let i=0;i<5;i++)
 	{
-		content += "<div id='" + i + "' class='levelItem' onclick='shiftToLevel(" + i + ")'>";
-		if(!participant['unlocked'][i])
-			content += "<img src='img/lock.png' style='height: 50%; width: 50%;'>";
-		content += "</div>";
+		content += "<div class='levelItem' onclick='shiftToLevel(" + i + ")'";
+		if(participant['unlocked'][i])
+			content += "style='opacity: 0;'";
+		content += "></div>";
 	}
 	content += "</div>";
-	content += "<div class='levelTextContainer'>";
+	content += "<div id='text'>";
 	for(let i=0;i<5;i++)
 	{
-		content += "<div class='textItem' ";
-		if(!participant['unlocked'][i])
-			content += "style='color: #222;'";
+		content += "<div class='levelText'";
+		if(participant['unlocked'][i])
+			content += "style='color: #e8e8e8'";
+		else
+			content += "style='background-color: #080808'";
 		content += ">" + name[i] + "</div>";
 	}
 	$('#ggBottom').html(content);
+	$('#gg').fadeIn(800);
 	nwin.show();
 	nwin.maximize();
 }
@@ -33,10 +37,8 @@ function shiftToLevel(n)
 	sessionStorage.currentLevel = n;
 	db.insert(
 	{
-		// participant: sjcl.encrypt(author, JSON.stringify(participant)),
-		// questions: sjcl.encrypt(author, JSON.stringify(questions))
-		participant: participant,
-		questions: questions
+		participant: sjcl.encrypt(author, JSON.stringify(participant)),
+		questions: sjcl.encrypt(author, JSON.stringify(questions))
 	}, function(err, newDocs){window.location.href = "Home.html";});
 }
 
@@ -50,18 +52,14 @@ function launchApp()
 			participant['endTimeStamp']   = participant['startTimeStamp'] + duration * 60000;
 			db.insert(
 			{
-				// participant: sjcl.encrypt(author, JSON.stringify(participant)),
-				// questions: sjcl.encrypt(author, JSON.stringify(questions))
-				participant: participant,
-				questions: questions
+				participant: sjcl.encrypt(author, JSON.stringify(participant)),
+				questions: sjcl.encrypt(author, JSON.stringify(questions))
 			},function(err, newDocs){	setVariables();	});
 		}
 		else
 		{
-			// participant = JSON.parse(sjcl.decrypt(author, docs[0].participant));
-			// questions   = JSON.parse(sjcl.decrypt(author, docs[0].questions));
-			participant = docs[0].participant;
-			questions = docs[0].questions;
+			participant = JSON.parse(sjcl.decrypt(author, docs[0].participant));
+			questions   = JSON.parse(sjcl.decrypt(author, docs[0].questions));
 			setVariables();
 		}
 	});

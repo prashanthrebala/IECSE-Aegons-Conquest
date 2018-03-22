@@ -67,3 +67,10 @@
 	src: url('../fonts/Avenir-Bold.otf');
 
 }
+
+@font-face {
+
+	font-family: 'Game-Of-Thrones';
+	src: url('../fonts/GOT.ttf');
+
+}
