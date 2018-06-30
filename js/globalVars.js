@@ -18,6 +18,7 @@ Question Link Format:
 </div>
 */
 
+var randomCounter = 0;
 
 function setVariables()
 {
@@ -41,11 +42,43 @@ function setVariables()
 			$("#qn" + i + "T").css({'color' : '#FF3F2F'});
 	}
 
+	displayQuestion(currentLevel * 4 + 1);
+
 	$('#countDown').countdown(participant['endTimeStamp'])
 	.on('update.countdown', function(event) 
 	{
 		var format = '%H:%M:%S';
 		$(this).html(event.strftime(format));
+		randomCounter++;
+		randomCounter %= 10;
+		if(randomCounter == 0 && new Date().getTime() < participant['latestTimeStamp'] && !participant['cheated'])
+		{
+			participant['cheated'] = true;
+			alert('The system time has been changed.');
+			$("#submitButton").css("pointer-events","none");
+			$("#disqualifiedModal").show();
+			openNav();
+			db.remove({}, { multi: true }, function (err, numRemoved) 
+			{
+				db.insert(
+				{
+					participant: sjcl.encrypt(author, JSON.stringify(participant)),
+					questions: sjcl.encrypt(author, JSON.stringify(questions))
+				}, function(err, newDocs){ });
+			});
+		}
+		if(randomCounter == 0 && new Date().getTime() - participant['latestTimeStamp'] >= 60000)
+		{
+			participant['latestTimeStamp'] = new Date().getTime();
+			db.remove({}, { multi: true }, function (err, numRemoved) 
+			{
+				db.insert(
+				{
+					participant: sjcl.encrypt(author, JSON.stringify(participant)),
+					questions: sjcl.encrypt(author, JSON.stringify(questions))
+				}, function(err, newDocs){ });
+			});
+		}
 	})
 	.on('finish.countdown', function(event) 
 	{
@@ -54,13 +87,21 @@ function setVariables()
 		alert('Your time\'s up!');
 		openNav();
 	});
+
+	if(participant['cheated'])
+	{
+		$("#disqualifiedModal").show();
+		openNav();
+		return;
+	}
+
 	nwin.show();
 	nwin.maximize();
 }
 
 function getTable()
 {
-	var tableContent = "<div class='timeRemainingText' id='pens'> penalty time: " + participant['penalty'] + "</div><hr>";
+	var tableContent = "<div class='timeRemainingText' id='pens'> time penalty: &nbsp;&nbsp;&nbsp;&nbsp;" + participant['penalty'] + "</div><hr>";
 	tableContent += "<div class='tableOfScores'><div class='tableOfScoresRow'><div>Problem</div><div>Penalties</div><div>Score</div></div><hr>";
 	for(let i=1;i<=numberOfQuestions;i++)
 	{
@@ -102,10 +143,7 @@ function submit()
 			{
 				participant: sjcl.encrypt(author, JSON.stringify(participant)),
 				questions: sjcl.encrypt(author, JSON.stringify(questions))
-			}, function(err, newDocs){
-				console.log(err);
-				console.log(newDocs);
-			});
+			}, function(err, newDocs){});
 		});
 	});
 }
@@ -122,7 +160,8 @@ function unlockNextLevel()
 	if(levelScore >= 90)
 	{
 		let pass = ['royalstag', 'shenron', 'pantherea', 'sausages'];
-		alert("You have unlocked level " + (currentLevel + 2) + "!\n Password for the PDF is: ");
+		if(currentLevel < 4)
+			alert("You have unlocked level " + (currentLevel + 2) + "!\n Password for the PDF is: " + pass[currentLevel]);
 		participant['unlocked'][currentLevel + 1] = true;
 	}
 }
@@ -149,8 +188,8 @@ function submitX(callback)
 
 	participant['submissionHistory'][currentQuestion].push(typedAnswer);
 
-	// if(Sha256.hash(typedAnswer) === questions[currentQuestion]['answer']) 
-	if("aeiou".indexOf(typedAnswer) >= 0)
+	// if("aeiou".indexOf(typedAnswer) >= 0)
+	if(Sha256.hash(typedAnswer) === questions[currentQuestion]['answer']) 
 	{
 		$('#successModal').delay(100).fadeIn();
 		$('#successModal').delay(300).fadeOut();
@@ -158,7 +197,7 @@ function submitX(callback)
 		questions[currentQuestion]['solved'] = true;
 		participant['score'] += questions[currentQuestion]['score'];
 		$('#sDinner2').text(participant['score']);
-		participant['penalty'] += (questions[currentQuestion]['penalties'] + 1) * parseInt(Math.floor((new Date().getTime() - participant['startTimeStamp']) / 60000));
+		participant['penalty'] += (questions[currentQuestion]['penalties'] + 1) * parseInt(1 + Math.floor((new Date().getTime() - participant['startTimeStamp']) / 60000));
 		unlockNextLevel();
 		callback();
 	}
@@ -179,7 +218,9 @@ function restoreFromDB()
 	{
 		participant = JSON.parse(sjcl.decrypt(author, docs[0].participant));
 		questions   = JSON.parse(sjcl.decrypt(author, docs[0].questions));
-		setVariables();
+		// participant = docs[0].participant;
+		// questions = docs[0].questions;
+		try{setVariables();}catch(err){alert(err);}
 	});
 }
 

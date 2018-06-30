@@ -1,0 +1,30 @@
+{
+  "name": "aegonsconquest",
+  "version": "1.0.0",
+  "description": "prometheus",
+  "main": "Login.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashanthrebala/IECSE-Aegons-Conquest.git"
+  },
+  "keywords": [
+    "iecse",
+    "prometheus",
+    "prashanthrebala",
+    "aegons",
+    "conquest"
+  ],
+  "author": "prashanthrebala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prashanthrebala/IECSE-Aegons-Conquest/issues"
+  },
+  "homepage": "https://github.com/prashanthrebala/IECSE-Aegons-Conquest#readme",
+  "dependencies": {
+    "nedb": "^1.8.0",
+    "ngui": "^0.3.1"
+  }
+}

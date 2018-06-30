@@ -7,12 +7,14 @@ var participant =
 
 {
 	'startTimeStamp': 0,
+	'latestTimeStamp': 0,
 	'endTimeStamp' : 0,
 	'score': 0,
 	'unlocked': [true, false, false, false, false],
 	'submissionHistory': [[],[],[],[],[],[],[],[],[],[],[],[],[],
 						  [],[],[],[],[],[],[],[],[],[],[],[],[]],
-	'penalty': 0
+	'penalty': 0,
+	'cheated': false
 };
 
 var ngui = require('nw.gui');
